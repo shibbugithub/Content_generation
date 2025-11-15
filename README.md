@@ -12,7 +12,7 @@ A powerful web application that leverages Google Gemini AI to generate high-qual
 ## 📸 Screenshots
 
 ### Main Interface
-![Main Interface](Content Generation & Summarization Tool and 7 more pages - Personal - Microsoft_ Edge 2025-11-01 12-21-52 (1).mp4)
+![Main Interface](video.mp4)
 *High-quality AI-generated content with copy and download options*
 
 ---
