@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Generation & Summarization Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🚀 AI Content Studio</h1>
+            <p class="subtitle">Generate & Summarize Content with AI Power</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="generate">
+                <span class="icon">✍️</span> Generate Content
+            </button>
+            <button class="tab-btn" data-tab="summarize">
+                <span class="icon">📝</span> Summarize Text
+            </button>
+        </div>
+
+        <!-- Content Generator Tab -->
+        <div id="generate" class="tab-content active">
+            <div class="card">
+                <h2>Content Generator</h2>
+                <p class="description">Create high-quality content tailored to your needs</p>
+                
+                <form id="generateForm">
+                    <div class="form-group">
+                        <label for="contentType">Content Type</label>
+                        <select id="contentType" required>
+                            <option value="">Select content type...</option>
+                            <option value="blog">Blog Post</option>
+                            <option value="email">Email</option>
+                            <option value="social">Social Media Post</option>
+                            <option value="product">Product Description</option>
+                            <option value="article">Article</option>
+                            <option value="story">Story</option>
+                            <option value="ad">Advertisement</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="topic">Topic / Subject</label>
+                        <input 
+                            type="text" 
+                            id="topic" 
+                            placeholder="e.g., Benefits of Remote Work" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tone">Tone</label>
+                            <select id="tone">
+                                <option value="professional">Professional</option>
+                                <option value="casual">Casual</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="formal">Formal</option>
+                                <option value="persuasive">Persuasive</option>
+                                <option value="informative">Informative</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="length">Length</label>
+                            <select id="length">
+                                <option value="short">Short</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="long">Long</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="generateBtn">
+                        <span class="btn-text">Generate Content</span>
+                        <span class="loader" style="display: none;"></span>
+                    </button>
+                </form>
+
+                <div id="generateOutput" class="output" style="display: none;">
+                    <div class="output-header">
+                        <h3>Generated Content</h3>
+                        <div class="output-actions">
+                            <button class="btn-icon" id="copyGenerated" title="Copy to clipboard">
+                                📋 Copy
+                            </button>
+                            <button class="btn-icon" id="downloadGenerated" title="Download as text">
+                                💾 Download
+                            </button>
+                        </div>
+                    </div>
+                    <div id="generatedContent" class="content-box"></div>
+                    <div class="stats">
+                        <span id="genTokens"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summarization Tab -->
+        <div id="summarize" class="tab-content">
+            <div class="card">
+                <h2>Text Summarizer</h2>
+                <p class="description">Get concise summaries of long texts</p>
+                
+                <form id="summarizeForm">
+                    <div class="form-group">
+                        <label for="inputText">
+                            Text to Summarize
+                            <span class="word-count" id="wordCount">0 words</span>
+                        </label>
+                        <textarea 
+                            id="inputText" 
+                            rows="10" 
+                            placeholder="Paste your text here (minimum 50 words)..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="summaryType">Summary Type</label>
+                        <select id="summaryType">
+                            <option value="brief">Brief (2-3 sentences)</option>
+                            <option value="detailed">Detailed Summary</option>
+                            <option value="bullet">Bullet Points</option>
+                            <option value="abstract">Academic Abstract</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="summarizeBtn">
+                        <span class="btn-text">Summarize Text</span>
+                        <span class="loader" style="display: none;"></span>
+                    </button>
+                </form>
+
+                <div id="summarizeOutput" class="output" style="display: none;">
+                    <div class="output-header">
+                        <h3>Summary</h3>
+                        <div class="output-actions">
+                            <button class="btn-icon" id="copySummary" title="Copy to clipboard">
+                                📋 Copy
+                            </button>
+                            <button class="btn-icon" id="downloadSummary" title="Download as text">
+                                💾 Download
+                            </button>
+                        </div>
+                    </div>
+                    <div id="summaryContent" class="content-box"></div>
+                    <div class="stats">
+                        <span id="originalLength"></span>
+                        <span id="summaryLength"></span>
+                        <span id="sumTokens"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
