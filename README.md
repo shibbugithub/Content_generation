@@ -12,19 +12,7 @@ A powerful web application that leverages Google Gemini AI to generate high-qual
 ## 📸 Screenshots
 
 ### Main Interface
-![Main Interface](screenshots/main-interface.png)
-*Content generation interface with multiple options*
-
-### Content Generation
-![Content Generation](screenshots/content-generation.png)
-*Generate blog posts, emails, social media content, and more*
-
-### Text Summarization
-![Text Summarization](screenshots/text-summarization.png)
-*Intelligent text summarization with multiple formats*
-
-### Generated Output
-![Generated Output](screenshots/output-example.png)
+![Main Interface](Content Generation & Summarization Tool and 7 more pages - Personal - Microsoft_ Edge 2025-11-01 12-21-52 (1).mp4)
 *High-quality AI-generated content with copy and download options*
 
 ---
